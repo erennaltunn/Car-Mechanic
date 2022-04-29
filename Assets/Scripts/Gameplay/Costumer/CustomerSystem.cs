@@ -4,20 +4,10 @@ using UnityEngine;
 
 public class CustomerSystem : MonoBehaviour
 {
-
-    public List<GameObject> mechanics = new List<GameObject>();
-
-    public List<GameObject> cashiers = new List<GameObject>();
-
-    public List<GameObject> customers = new List<GameObject>();
-
     public Vector3 customerStartPosition = new Vector3(2,-1,-10);
 
-
-    public GameObject Customer;
-
-    private GameObject customer;
-
+    public CustomerMover[] Customers;
+    
 
 
     // Start is called before the first frame update
@@ -32,33 +22,15 @@ public class CustomerSystem : MonoBehaviour
         
     }
 
-    public void InitCustomer(int MechanicID, int cashierID)
+    public void ActivateCustomer(int id)
     {
-        customer = Instantiate(Customer, customerStartPosition, Quaternion.identity);
-        customer.GetComponent<CustomerControl>().mechanicPosition = mechanics[MechanicID].transform.position;
-        customer.GetComponent<CustomerControl>().cashierPosition = cashiers[cashierID].transform.position;;
-        customer.GetComponent<CustomerControl>().MoveToMechanic();
-    }
-
-
-    public void ActivateTaker(Collider other)
-    {
-        other.gameObject.GetComponent<Taker>().enabled = true;
-        Debug.Log("Car entered mechanic");
-    }
-
-    public void DisableTaker(Collider other)
-    {
-        other.gameObject.GetComponent<Taker>().enabled = false;
-        Debug.Log("Car exited mechanic");
-    }
-
-
-    public void SendToCashier()
-    {
-  
-        Debug.Log("sendtocahsier");
+        Customers[id].isMechanicPurchased = true;
         
+    }
+
+    public void DisableCustomer(int id)
+    {
+        Customers[id].isMechanicPurchased = false;
         
     }
 

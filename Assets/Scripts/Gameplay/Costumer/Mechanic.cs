@@ -9,10 +9,13 @@ public class Mechanic : MonoBehaviour
 
     public int mechanicID;
 
+    public bool isCustomerInit = false;
     public CustomerSystem customerSystem;
     public Vector3 customerStartPosition = new Vector3(2,-1,-10);
 
-    public Vector3 cashierPosition = new Vector3(14.5f,-1f,0f);
+    public Vector3 cashierPosition;
+
+    public Vector3 endPosition;
 
     public GameObject Customer;
 
@@ -23,9 +26,7 @@ public class Mechanic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Customer.GetComponent<CustomerControl>().mechanicPosition = transform.position;
-        Customer.GetComponent<CustomerControl>().cashierPosition = cashierPosition;
-
+        //cashierPosition = customerSystem.GetComponent<CustomerSystem>().cashiers[mechanicID].transform.position;
     }
 
     // Update is called once per frame
@@ -35,12 +36,17 @@ public class Mechanic : MonoBehaviour
     }
 
     public void InstantiateCustomer() {
-        customer = Instantiate(Customer, customerStartPosition, Quaternion.identity);
-        customer.GetComponent<CustomerControl>().mechanicID = mechanicID;
-        customer.GetComponent<CustomerControl>().mechanicPosition = transform.position;
-        customer.GetComponent<CustomerControl>().cashierPosition = cashierPosition;
-        customerSystem.customers.Add(customer);
-        customer.GetComponent<CustomerControl>().MoveToMechanic();
+        if(isCustomerInit == false){
+            Debug.Log("init cutomer");
+            isCustomerInit = true;
+            customer = Instantiate(Customer, customerStartPosition, Quaternion.identity);
+            customer.GetComponent<CustomerControl>().mechanicID = mechanicID;
+            customer.GetComponent<CustomerControl>().mechanicPosition = transform.position;
+            customer.GetComponent<CustomerControl>().cashierPosition = cashierPosition;
+            //customer.GetComponent<CustomerControl>().endPosition = endPosition;
+            //customerSystem.customers.Add(customer);
+            customer.GetComponent<CustomerControl>().MoveToMechanic();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -57,7 +63,7 @@ public class Mechanic : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if(other.gameObject.tag == targetTag && other.gameObject.GetComponent<Taker>().TakedObjectsCount == 4 && instantiateNewCustomer){
+        if(other.gameObject.tag == targetTag && other.gameObject.GetComponent<Taker>().TakedObjectsCount == 4){
             other.gameObject.GetComponent<CustomerControl>().MoveToCashier();           
         }
     }
@@ -68,7 +74,7 @@ public class Mechanic : MonoBehaviour
         {
             other.gameObject.GetComponent<Taker>().enabled = false;
             Debug.Log("Car exited mechanic");
-            instantiateNewCustomer = true;
+            isCustomerInit = false;
         }
     }
 

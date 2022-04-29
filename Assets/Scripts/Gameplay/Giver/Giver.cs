@@ -235,15 +235,38 @@ public class Giver : MonoBehaviour
         }
 
     }
-
-    public void Cashier()
+    private float heigthOffset = 0.3f;
+    private int maxGiftCount = 5;
+    
+    private bool checkOnlyOneGift = true;
+    private Vector3 giftPos;
+    public void GenerateGiftFromCustomer()
     {
-        Debug.Log("cashier gift");
-        _newGift = Instantiate(GiftPrefab, SpesificPositionsList[GiftList.Count].position, Quaternion.identity, GiftParent);
+        if(checkOnlyOneGift){
+            checkOnlyOneGift = false;
+            //Debug.Log("cashier gift");
+            if(CurrentGiftCount < maxGiftCount)
+            {
+                if(CurrentGiftCount == 0)
+                    giftPos = giftPos + GiftParent.transform.position + new Vector3(0,heigthOffset,0);
+                else{
+                    giftPos = giftPos + new Vector3(0,heigthOffset,0);
+                }
+                
+                _newGift = Instantiate(GiftPrefab, giftPos, Quaternion.identity, GiftParent);
 
-        GiftList.Add(_newGift);
-        CurrentGiftCount = GiftList.Count;
+                GiftList.Add(_newGift);
+                CurrentGiftCount = GiftList.Count;
+            }
+            else
+            {
+                //Pause Customer System
+            }
+        }   
+    }
 
+    public void SetGiverForCustomer(){
+        checkOnlyOneGift = true;
     }
 
     // OnStay or OnEnter

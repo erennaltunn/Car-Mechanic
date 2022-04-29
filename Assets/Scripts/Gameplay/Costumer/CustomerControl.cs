@@ -6,11 +6,12 @@ using DG.Tweening;
 
 public class CustomerControl : MonoBehaviour
 {
+    public Transform[] wayPoints;
+    public Vector3 firstWayPoint;
     public Vector3 mechanicPosition;
-
+    public Vector3 secondWayPoint;
     public Vector3 cashierPosition;
-
-    public Vector3 destroyPosition;
+    public Vector3 endPosition;
 
     public GameObject Customer;
 
@@ -19,7 +20,7 @@ public class CustomerControl : MonoBehaviour
     public int mechanicID=0;
 
     public int cashierID=0;
-    public Vector3 customerStartPosition = new Vector3(2,-1,-10);
+    public Vector3 customerStartPosition;
 
     public CustomerSystem customerSystem;
 
@@ -37,18 +38,19 @@ public class CustomerControl : MonoBehaviour
     }
 
     public void MoveToMechanic(){
-        Debug.Log("MovingTOMechanic");
+        //Debug.Log("MovingTOMechanic");
         transform.DOMove(mechanicPosition, 5f, false);
     }
 
     public void MoveToCashier(){
-        Debug.Log("MovingToCashier");
+        //Debug.Log("MovingToCashier");
         transform.DOMove(cashierPosition, 5f); 
     }
 
     public void MoveToEndPoint(){
-        Debug.Log("MovingToEndPoint");
-        transform.DOMove(destroyPosition, 5f).OnComplete(() => Destroy(this.gameObject)); 
+        //Debug.Log("MovingToEndPoint");
+        endPosition = cashierPosition + new Vector3(0,0,5);
+        //transform.DOMove(endPosition, 5f).OnComplete(() => Destroy(this.gameObject)); 
     }
 
 }
