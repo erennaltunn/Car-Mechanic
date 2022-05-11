@@ -14,7 +14,11 @@ public class CustomerMover : MonoBehaviour
 
     [SerializeField] private Taker taker;
 
+    public Transform parentForWaypoints;
+
     public bool isMechanicPurchased = true;
+
+    public bool isCustomerOnMove = true;
 
     private Transform currentWayPoint;
 
@@ -32,7 +36,7 @@ public class CustomerMover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isMechanicPurchased)
+        if(isMechanicPurchased && isCustomerOnMove)
         {
             //transform.position = Vector3.MoveTowards(transform.position, currentWayPoint.position, moveSpeed * Time.deltaTime);
             if(wayPointIndex != 5)
@@ -61,8 +65,21 @@ public class CustomerMover : MonoBehaviour
                 }
                 else if(wayPointIndex == 3){//cashier
                     wayPointIndex++;
+                    //stop at cashier
                     currentWayPoint = waypoints.GetNextWaypoint(currentWayPoint);
                     transform.LookAt(currentWayPoint);
+                    Taker tk = this.gameObject.GetComponent<Taker>();
+                    for(int i=0;i<4;i++)
+                    {
+                        GameObject _convertedObj = tk.TakedObjects[i];
+                        Destroy(_convertedObj);
+                    }
+                    tk.TakedObjects.Clear();
+                    tk.TakedObjectsCount = 0;
+                    GameObject customer = Instantiate(this.gameObject, new Vector3(-14f,1.4f,-6.5f), Quaternion.identity, parentForWaypoints);
+                    customer.GetComponent<CustomerMover>().isMechanicPurchased = true;
+                    Destroy(this.gameObject);
+                    isCustomerOnMove = false; //stop loop;
                 }
                 else if(wayPointIndex == 4){
                     //Shake and Destroy Gameobject

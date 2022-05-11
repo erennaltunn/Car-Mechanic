@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Variable-Vector3
   m_EditorClassIdentifier: 
   DeveloperDescription: 
-  _defaultValue: {x: 1, y: 0, z: 1}
+  _defaultValue: {x: 0.5, y: 0.25, z: 0.5}

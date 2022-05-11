@@ -525,36 +525,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1953070509}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &75473131
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 75473132}
-  m_Layer: 0
-  m_Name: Waypoint (4)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &75473132
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 75473131}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7, y: -0.21, z: 0.47}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 722314459}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &85955821
 GameObject:
   m_ObjectHideFlags: 0
@@ -806,6 +776,11 @@ PrefabInstance:
       propertyPath: waypoints
       value: 
       objectReference: {fileID: 722314458}
+    - target: {fileID: 6370634010876816188, guid: ac63a924201edef45b07559dc95dec8a,
+        type: 3}
+      propertyPath: parentForWaypoints
+      value: 
+      objectReference: {fileID: 240736594}
     - target: {fileID: 7635065916899431236, guid: ac63a924201edef45b07559dc95dec8a,
         type: 3}
       propertyPath: m_Name
@@ -947,6 +922,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 927549352}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &148828566 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8791575387657884374, guid: d2712928cc216f448b8ecd27bcc737f2,
+    type: 3}
+  m_PrefabInstance: {fileID: 927549352}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd3ed2f90b7d74deab1fd90d622e9f72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &164263984
 GameObject:
   m_ObjectHideFlags: 0
@@ -1957,6 +1944,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2712928cc216f448b8ecd27bcc737f2, type: 3}
+--- !u!4 &244867017 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8791575388154207751, guid: d2712928cc216f448b8ecd27bcc737f2,
+    type: 3}
+  m_PrefabInstance: {fileID: 8791575388043592142}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &246004945
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4468,7 +4461,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 629079610}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.3, y: -0.21, z: -6.93}
+  m_LocalPosition: {x: -4.26, y: -0.21, z: -6.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1785925560}
@@ -4663,6 +4656,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49b04f7e764fd3841879dee013d5ec75, type: 3}
+--- !u!4 &664498401 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8791575388154207751, guid: d2712928cc216f448b8ecd27bcc737f2,
+    type: 3}
+  m_PrefabInstance: {fileID: 927549352}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &678045723 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8209982071069116264, guid: 1ea4c202d3e5b4791a1bf6556cb6bd18,
@@ -5175,7 +5174,6 @@ Transform:
   - {fileID: 1249083425}
   - {fileID: 115047470}
   - {fileID: 733905660}
-  - {fileID: 75473132}
   m_Father: {fileID: 240736594}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5233,7 +5231,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 733905659}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7, y: -0.21, z: -7.43}
+  m_LocalPosition: {x: 0.7, y: -0.21, z: -7.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 722314459}
@@ -6669,6 +6667,61 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 240736594}
     m_Modifications:
+    - target: {fileID: 8791575387657884374, guid: d2712928cc216f448b8ecd27bcc737f2,
+        type: 3}
+      propertyPath: giverType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791575387657884374, guid: d2712928cc216f448b8ecd27bcc737f2,
+        type: 3}
+      propertyPath: GiftParent
+      value: 
+      objectReference: {fileID: 664498401}
+    - target: {fileID: 8791575387657884374, guid: d2712928cc216f448b8ecd27bcc737f2,
+        type: 3}
+      propertyPath: collectableType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791575387657884374, guid: d2712928cc216f448b8ecd27bcc737f2,
+        type: 3}
+      propertyPath: SpesificPositionsList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791575387657884377, guid: d2712928cc216f448b8ecd27bcc737f2,
+        type: 3}
+      propertyPath: TriggerExit.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791575387657884377, guid: d2712928cc216f448b8ecd27bcc737f2,
+        type: 3}
+      propertyPath: TriggerExit.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791575387657884377, guid: d2712928cc216f448b8ecd27bcc737f2,
+        type: 3}
+      propertyPath: TriggerExit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 148828566}
+    - target: {fileID: 8791575387657884377, guid: d2712928cc216f448b8ecd27bcc737f2,
+        type: 3}
+      propertyPath: TriggerExit.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791575387657884377, guid: d2712928cc216f448b8ecd27bcc737f2,
+        type: 3}
+      propertyPath: TriggerExit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StopGivingGift
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791575387657884377, guid: d2712928cc216f448b8ecd27bcc737f2,
+        type: 3}
+      propertyPath: TriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GiftGenerate
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791575387657884377, guid: d2712928cc216f448b8ecd27bcc737f2,
+        type: 3}
+      propertyPath: TriggerExit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8791575387657884379, guid: d2712928cc216f448b8ecd27bcc737f2,
         type: 3}
       propertyPath: m_RootOrder
@@ -6728,6 +6781,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cashier
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791575388154207751, guid: d2712928cc216f448b8ecd27bcc737f2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791575388189850187, guid: d2712928cc216f448b8ecd27bcc737f2,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2712928cc216f448b8ecd27bcc737f2, type: 3}
@@ -7003,6 +7066,11 @@ PrefabInstance:
       propertyPath: waypoints
       value: 
       objectReference: {fileID: 1754448765}
+    - target: {fileID: 6370634010876816188, guid: ac63a924201edef45b07559dc95dec8a,
+        type: 3}
+      propertyPath: parentForWaypoints
+      value: 
+      objectReference: {fileID: 1802353377}
     - target: {fileID: 7635065916899431236, guid: ac63a924201edef45b07559dc95dec8a,
         type: 3}
       propertyPath: m_Name
@@ -9487,6 +9555,11 @@ PrefabInstance:
       propertyPath: waypoints
       value: 
       objectReference: {fileID: 314759023}
+    - target: {fileID: 6370634010876816188, guid: ac63a924201edef45b07559dc95dec8a,
+        type: 3}
+      propertyPath: parentForWaypoints
+      value: 
+      objectReference: {fileID: 282542682}
     - target: {fileID: 7635065916899431236, guid: ac63a924201edef45b07559dc95dec8a,
         type: 3}
       propertyPath: m_Name
@@ -12179,6 +12252,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8791575388043592142}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1762497304 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8791575387657884374, guid: d2712928cc216f448b8ecd27bcc737f2,
+    type: 3}
+  m_PrefabInstance: {fileID: 8791575388043592142}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd3ed2f90b7d74deab1fd90d622e9f72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1762572442
 GameObject:
   m_ObjectHideFlags: 0
@@ -14183,6 +14268,11 @@ PrefabInstance:
       propertyPath: waypoints
       value: 
       objectReference: {fileID: 1785925559}
+    - target: {fileID: 6370634010876816188, guid: ac63a924201edef45b07559dc95dec8a,
+        type: 3}
+      propertyPath: parentForWaypoints
+      value: 
+      objectReference: {fileID: 1779479263}
     - target: {fileID: 7635065916899431236, guid: ac63a924201edef45b07559dc95dec8a,
         type: 3}
       propertyPath: m_Name
@@ -14676,13 +14766,78 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8791575387657884374, guid: d2712928cc216f448b8ecd27bcc737f2,
         type: 3}
+      propertyPath: GiftParent
+      value: 
+      objectReference: {fileID: 244867017}
+    - target: {fileID: 8791575387657884374, guid: d2712928cc216f448b8ecd27bcc737f2,
+        type: 3}
       propertyPath: collectableType
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8791575387657884377, guid: d2712928cc216f448b8ecd27bcc737f2,
         type: 3}
+      propertyPath: TriggerExit.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791575387657884377, guid: d2712928cc216f448b8ecd27bcc737f2,
+        type: 3}
+      propertyPath: TriggerEnter.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791575387657884377, guid: d2712928cc216f448b8ecd27bcc737f2,
+        type: 3}
+      propertyPath: TriggerExit.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791575387657884377, guid: d2712928cc216f448b8ecd27bcc737f2,
+        type: 3}
+      propertyPath: TriggerEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791575387657884377, guid: d2712928cc216f448b8ecd27bcc737f2,
+        type: 3}
+      propertyPath: TriggerExit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1762497304}
+    - target: {fileID: 8791575387657884377, guid: d2712928cc216f448b8ecd27bcc737f2,
+        type: 3}
+      propertyPath: TriggerEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791575387657884377, guid: d2712928cc216f448b8ecd27bcc737f2,
+        type: 3}
+      propertyPath: TriggerExit.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791575387657884377, guid: d2712928cc216f448b8ecd27bcc737f2,
+        type: 3}
+      propertyPath: TriggerEnter.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791575387657884377, guid: d2712928cc216f448b8ecd27bcc737f2,
+        type: 3}
+      propertyPath: TriggerExit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetGiverForCustomer
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791575387657884377, guid: d2712928cc216f448b8ecd27bcc737f2,
+        type: 3}
       propertyPath: TriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: GenerateGiftFromCustomer
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791575387657884377, guid: d2712928cc216f448b8ecd27bcc737f2,
+        type: 3}
+      propertyPath: TriggerEnter.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791575387657884377, guid: d2712928cc216f448b8ecd27bcc737f2,
+        type: 3}
+      propertyPath: TriggerExit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791575387657884377, guid: d2712928cc216f448b8ecd27bcc737f2,
+        type: 3}
+      propertyPath: TriggerEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8791575387657884379, guid: d2712928cc216f448b8ecd27bcc737f2,
         type: 3}
